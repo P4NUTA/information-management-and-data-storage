@@ -19,9 +19,9 @@ func (s *Stack) Pop() any {
 	if s.Empty() {
 		return ""
 	}
-	length := len(*s)
-	text := (*s)[length-1]
-	*s = (*s)[:length-1]
+	length := len(*s) - 1
+	text := (*s)[length]
+	*s = (*s)[:length]
 	return text
 }
 
@@ -33,6 +33,11 @@ func (s Stack) Print() {
 // Empty Проверяет стек на пустоту
 func (s Stack) Empty() bool {
 	return len(s) == 0
+}
+
+// Top Возвращает верхний элемент
+func (s Stack) Top() any {
+	return s[len(s)-1]
 }
 
 // ChangeStacksByReturn поменять местами с помощью функции
