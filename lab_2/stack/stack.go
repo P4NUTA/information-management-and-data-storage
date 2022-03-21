@@ -16,7 +16,7 @@ func (s *Stack) Push(text any) {
 
 //Pop удаление последнего элемента из стека
 func (s *Stack) Pop() any {
-	if len(*s) == 0 {
+	if s.Empty() {
 		return ""
 	}
 	length := len(*s)
@@ -28,6 +28,11 @@ func (s *Stack) Pop() any {
 // Print Отображение всех элементов в стеке
 func (s Stack) Print() {
 	fmt.Println(s)
+}
+
+// Empty Проверяет стек на пустоту
+func (s Stack) Empty() bool {
+	return len(s) == 0
 }
 
 // ChangeStacksByReturn поменять местами с помощью функции
